@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $('document').ready(function(){
+                var table = new Array(10);
+                var toWrite = '';
+                toString = '';
+                var raw = 0;
+                var col = 0;
+                for(var i = 0; i < 10; i++){
+                    table[i] = new Array(10);
+                }
+                for (raw = 0; raw < 10; raw++){
+                    for (col = 0; col < 10; col++){
+                        table[raw][col] = (raw + 1) * (col + 1);
+                    }
+                }
+                for (col = 0; col < 10; col++){
+                    for (raw = 0; raw < 5; raw++){
+                        if (raw < 9){
+                            toString = "0" + (raw + 1);
+                        }
+                        else{
+                            toString = (raw + 1);
+                        }
+                        toWrite += toString + "x";
+                        if (col < 9){
+                            toString = "0" + (col + 1);
+                        }
+                        else{
+                            toString = (col + 1);
+                        }
+                        toWrite += toString + "=";
+                        if (table[raw][col] < 100){
+                            if(table[raw][col] < 10){
+                                toString = "00" + table[raw][col];
+                            }
+                            else{
+                                toString = "0" + table[raw][col];
+                            }
+                        }
+                        else{
+                            toString = table[raw][col];
+                        }
+                        toWrite += toString + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    }
+                    if(raw >= 4){
+                        toWrite +='<br>';
+                    }
+                }
+                toWrite +='<br>';
+                for (col = 0; col < 10; col++){
+                    for (raw = 5; raw < 10; raw++){
+                        if (raw < 9){
+                            toString = "0" + (raw + 1);
+                        }
+                        else{
+                            toString = (raw + 1);
+                        }
+                        toWrite += toString + "x";
+                        if (col < 9){
+                            toString = "0" + (col + 1);
+                        }
+                        else{
+                            toString = (col + 1);
+                        }
+                        toWrite += toString + "=";
+                        if (table[raw][col] < 100){
+                            if(table[raw][col] < 10){
+                                toString = "00" + table[raw][col];
+                            }
+                            else{
+                                toString = "0" + table[raw][col];
+                            }
+                        }
+                        else{
+                            toString = table[raw][col];
+                        }
+                        toWrite += toString + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    }
+                    if(raw >= 4){
+                        toWrite +='<br>';
+                    }
+                }
+                $('body').html(toWrite);
+            })
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

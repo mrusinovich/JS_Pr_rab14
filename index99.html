@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function(){
+                class Manager {
+                    constructor(name, surname, age, rate, days) {
+                        this.name = name;
+                        this.surname = surname;
+                        this.age = age;
+                        this.rate = rate;
+                        this.days = days;
+                    }
+                    getName() {
+                        return this.name;
+                    }
+                    setName(value) {
+                        this.name = value;
+                    }
+                    getSurname() {
+                        return this.surname;
+                    }
+                    setSurname(value) {
+                        this.surname = value;
+                    }
+                    getAge() {
+                        return this.age;
+                    }
+                    setAge(value) {
+                        this.age = value;
+                    }
+                    getRate() {
+                        return this.rate;
+                    }
+                    setRate(value) {
+                        this.rate = value;
+                    }
+                    getDays() {
+                        return this.days;
+                    }
+                    setDays(value) {
+                        this.days = value;
+                    }
+                    getSalary() {
+                        return this.days * this.rate;
+                    }
+                }
+                var manager = new Manager("Дональд", "Трамп", 73, 10, 31);
+                $('#ajax_test').click(function(){
+                    alert('Имя: ' + manager.name);
+                    alert('Фамилия: ' + manager.surname);
+                    alert('Возраст: ' + manager.age);
+                    alert('Ставка (в день): ' + manager.rate);
+                    alert('Отработано дней: ' + manager.days);
+                    alert('Зарплата: ' + manager.getSalary());
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button type="button" id="ajax_test" name="button">Показать</button>
+    </body>
+</html>

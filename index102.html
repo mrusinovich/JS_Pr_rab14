@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Инициализируем функции конструктора
+                function Hero(name, level) {
+                    this.name = name;
+                    this.level = level;
+                }
+                function Warrior(name, level, weapon) {
+                    Hero.call(this, name, level);
+                    this.weapon = weapon;
+                }
+                function Healer(name, level, spell) {
+                    Hero.call(this, name, level);
+                    this.spell = spell;
+                }
+                // Связываем прототипы и методы прототипов
+                Warrior.prototype = Object.create(Hero.prototype);
+                Healer.prototype = Object.create(Hero.prototype);
+                Hero.prototype.greet = function () {
+                    return `${this.name} says hello.`;
+                }
+                Warrior.prototype.attack = function () {
+                    return `${this.name} attacks with the ${this.weapon}.`;
+                }
+                Healer.prototype.heal = function () {
+                    return `${this.name} casts ${this.spell}.`;
+                }
+                Hero.prototype.greet = function() {
+                    return `${this.name} says hello.`;
+                }
+
+                const hero1 = new Warrior('Bjorn', 1, 'axe');
+                const hero2 = new Healer('Kanin', 1, 'cure');
+                
+                function Mage(name, level, spell) {
+                    Hero.call(this, name, level);
+                    this.spell = spell;
+                }
+                Mage.prototype = Object.create(Hero.prototype);
+                Mage.prototype.shoot = function () {
+                    return `${this.name} shoots ${this.spell}.`;
+                }
+                const hero3 = new Mage('Thor', 1, 'a lightning');
+                
+                alert(hero1.greet());
+				alert(hero1.attack());
+                alert(hero2.greet());
+				alert(hero2.heal());
+                alert(hero3.greet());
+				alert(hero3.shoot());
+            })
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
