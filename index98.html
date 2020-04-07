@@ -21,31 +21,31 @@
                 for (col = 0; col < 10; col++){
                     for (raw = 0; raw < 5; raw++){
                         if (raw < 9){
-                            toString = "0" + (raw + 1);
+                            toString = "&nbsp;&nbsp;" + (raw + 1);
                         }
                         else{
                             toString = (raw + 1);
                         }
-                        toWrite += toString + "x";
+                        toWrite += toString + " x ";
                         if (col < 9){
-                            toString = "0" + (col + 1);
+                            toString = "&nbsp;&nbsp;" + (col + 1);
                         }
                         else{
                             toString = (col + 1);
                         }
-                        toWrite += toString + "=";
+                        toWrite += toString + " =";
                         if (table[raw][col] < 100){
                             if(table[raw][col] < 10){
-                                toString = "00" + table[raw][col];
+                                toString = "&nbsp;&nbsp;&nbsp;&nbsp;" + table[raw][col];
                             }
                             else{
-                                toString = "0" + table[raw][col];
+                                toString = "&nbsp;&nbsp;" + table[raw][col];
                             }
                         }
                         else{
                             toString = table[raw][col];
                         }
-                        toWrite += toString + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                        toWrite += toString + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                     }
                     if(raw >= 4){
                         toWrite +='<br>';
@@ -55,31 +55,31 @@
                 for (col = 0; col < 10; col++){
                     for (raw = 5; raw < 10; raw++){
                         if (raw < 9){
-                            toString = "0" + (raw + 1);
+                            toString = "&nbsp;&nbsp;" + (raw + 1);
                         }
                         else{
                             toString = (raw + 1);
                         }
-                        toWrite += toString + "x";
+                        toWrite += toString + " x ";
                         if (col < 9){
-                            toString = "0" + (col + 1);
+                            toString = "&nbsp;&nbsp;" + (col + 1);
                         }
                         else{
                             toString = (col + 1);
                         }
-                        toWrite += toString + "=";
+                        toWrite += toString + " =";
                         if (table[raw][col] < 100){
                             if(table[raw][col] < 10){
-                                toString = "00" + table[raw][col];
+                                toString = "&nbsp;&nbsp;&nbsp;&nbsp;" + table[raw][col];
                             }
                             else{
-                                toString = "0" + table[raw][col];
+                                toString = "&nbsp;&nbsp;" + table[raw][col];
                             }
                         }
                         else{
                             toString = table[raw][col];
                         }
-                        toWrite += toString + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                        toWrite += toString + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                     }
                     if(raw >= 4){
                         toWrite +='<br>';
